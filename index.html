@@ -341,6 +341,25 @@
                         </div>
 
                         <button type="submit" class="btn" style="width: 100%;">Confirm Booking</button>
+
+                        <script>
+                        document.querySelector('form').addEventListener('submit', function(e) {
+                            // Get form values
+                            const name = document.getElementById('name').value.trim();
+                            const people = document.getElementById('people').value.trim();
+                            const date = document.getElementById('date').value.trim();
+                            const packageType = document.getElementById('package').options[document.getElementById('package').selectedIndex].text;
+                            const hotel = document.getElementById('hotel_name').value.trim();
+
+                            // Compose WhatsApp message
+                            const message = `Safari Booking Request:%0AName: ${name}%0APeople: ${people}%0ADate: ${date}%0APackage: ${packageType}%0AHotel: ${hotel}`;
+                            const whatsappNumber = '94717595859'; // without +
+                            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+                            // Open WhatsApp in new tab
+                            window.open(whatsappUrl, '_blank');
+                        });
+                        </script>
                     </form>
                 </div>
             </div>
