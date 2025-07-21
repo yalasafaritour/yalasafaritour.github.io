@@ -222,6 +222,27 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            document.querySelectorAll('.package-card .btn').forEach((btn, idx) => {
+                btn.addEventListener('click', function (e) {
+                    // Prevent anchor default scroll
+                    e.preventDefault();
+                    // Get package name from card
+                    const packageName = btn.closest('.package-card').querySelector('h3').textContent.trim();
+                    // Map package name to select value
+                    let value = '';
+                    if (packageName === 'Half Day Safari') value = 'half-day';
+                    else if (packageName === 'Full Day Safari') value = 'full-day';
+                    else if (packageName === '5am-12pm Safari') value = '5am-12pm-Safari';
+                    // Set select value
+                    const select = document.getElementById('package');
+                    if (select) select.value = value;
+                    // Scroll to booking section
+                    document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        </script>
     </section>
 
     <!-- Booking Section -->
