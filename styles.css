@@ -652,9 +652,12 @@
         }
 
         @media (max-width: 480px) {
-            .logo h1 {
+            .logo .row {
                 font-size: 1.5rem;
                 margin-left:10px;
+            }
+            .logo .row h1{
+                font-size: 1.3rem;
             }
             .nav_btn{margin-right:20px;}
             
