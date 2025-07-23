@@ -178,14 +178,14 @@
                             alt="Half Day Safari">
                     </div>
                     <div class="package-content">
-                        <h3>Half Day Safari</h3>
+                        <h3>Morning Safari</h3>
                         <ul class="package-details">
                             <li><i class="fas fa-clock"></i> Duration: 4 hours</li>
                             <li><i class="fas fa-users"></i> Group Size: 1-6 people (for one jeep)</li>
                             <li><i class="fas fa-camera"></i> Photography opportunities</li>
                             <li><i class="fas fa-utensils"></i> Snacks & drinks included</li>
                         </ul>
-                        <div class="package-price">$50 <span>per jeep</span></div>
+                        <div class="package-price">$65 <span>per jeep</span></div>
                         <a href="#booking" class="btn">Book Now</a>
                     </div>
                 </div>
@@ -198,12 +198,12 @@
                     <div class="package-content">
                         <h3>Full Day Safari</h3>
                         <ul class="package-details">
-                            <li><i class="fas fa-clock"></i> Duration: 6.am-6.pm</li>
+                            <li><i class="fas fa-clock"></i> Duration: 12 hours</li>
                             <li><i class="fas fa-users"></i> Group Size: 1-6 people (for one jeep)</li>
                             <li><i class="fas fa-camera"></i> Professional photography guidance</li>
                             <li><i class="fas fa-utensils"></i> Lunch & refreshments included</li>
                         </ul>
-                        <div class="package-price">$98 <span>per jeep</span></div>
+                        <div class="package-price">$110 <span>per jeep</span></div>
                         <a href="#booking" class="btn">Book Now</a>
                     </div>
                 </div>
@@ -214,14 +214,14 @@
                             alt="Premium Safari">
                     </div>
                     <div class="package-content">
-                        <h3>5am-12pm Safari</h3>
+                        <h3>Half Day Safari</h3>
                         <ul class="package-details">
-                            <li><i class="fas fa-clock"></i> Duration: 5am-12pm</li>
+                            <li><i class="fas fa-clock"></i> Duration: 6 hours</li>
                             <li><i class="fas fa-users"></i> Group Size: 1-6 people (for one jeep)</li>
                             <li><i class="fas fa-hotel"></i> Luxury safari jeeps</li>
                             <li><i class="fas fa-utensils"></i> Breakfast included</li>
                         </ul>
-                        <div class="package-price">$68 <span>per jeep</span></div>
+                        <div class="package-price">$75 <span>per jeep</span></div>
                         <a href="#booking" class="btn">Book Now</a>
                     </div>
                 </div>
@@ -237,9 +237,9 @@
                     const packageName = btn.closest('.package-card').querySelector('h3').textContent.trim();
                     // Map package name to select value
                     let value = '';
-                    if (packageName === 'Half Day Safari') value = 'half-day';
+                    if (packageName === 'Morning Safari') value = 'Morning Safari';
                     else if (packageName === 'Full Day Safari') value = 'full-day';
-                    else if (packageName === '5am-12pm Safari') value = '5am-12pm-Safari';
+                    else if (packageName === 'Half Day Safari') value = 'Half Day Safari';
                     // Set select value
                     const select = document.getElementById('package');
                     if (select) select.value = value;
@@ -277,17 +277,13 @@
                 </div>
 
                 <div class="booking-form">
-                    <form action="https://formspree.io/f/xyzpzqqy" method="POST">
-                        <div class="half-width">
+                    <form action="#" method="POST">
+                        
                             <div class="form-group">
                                 <label for="name">Full Name</label>
                                 <input type="text" name="name" id="name" required>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" name="email" id="email" required>
-                            </div>
-                        </div>
+                        
 
                         <div class="half-width">
                             <div class="form-group">
@@ -303,8 +299,8 @@
                             <label for="jeep">Select Safari Jeep Type</label>
                             <select name="jeep" id="jeep" required>
                                 <option value="">Choose a Jeep Type</option>
-                                <option value="half-day">Toyota Hilux</option>
-                                <option value="full-day">Mahindra Bolero</option>
+                                <option value="Toyota Hilux">Toyota Hilux</option>
+                                <option value="Mahindra Bolero">Mahindra Bolero</option>
                             </select>
                         </div>
 
@@ -312,9 +308,10 @@
                             <label for="package">Select Safari Package</label>
                             <select name="package" id="package" required>
                                 <option value="">Choose a package</option>
-                                <option value="half-day">Half Day Safari</option>
+                                <option value="Morning Safari">Morning Safari</option>
+                                <option value="Evening Safari">Evening Safari</option>
                                 <option value="full-day">Full Day Safari</option>
-                                <option value="5am-12pm-Safari">5am-12pm Safari</option>
+                                <option value="Half Day Safari">Half Day Safari</option>
                                 <!-- <option value="private">Private Safari - Custom Pricing</option> -->
                             </select>
                         </div>
@@ -322,18 +319,27 @@
                         <div class="half-width">
                             <div class="form-group">
                                 <label for="date">Preferred Date</label>
-                                <input type="date" name="date" id="date" required>
+                                <input type="date" name="date" id="date" required min="">
                             </div>
                             <div class="form-group">
                                 <label for="time">Preferred Time</label>
                                 <select name="time" id="time" required>
                                     <option value="">Select time</option>
-                                    <option value="morning">Morning (5:30 AM - 10:30 AM)</option>
-                                    <option value="afternoon">Afternoon (2:30 PM - 6:30 PM)</option>
-                                    <option value="fullday">Full Day (5:30 AM - 6:30 PM)</option>
+                                    <option value="morning">Morning</option>
+                                    <option value="Evening">Evening</option>
+                                    <option value="fullday">Full Day</option>
                                 </select>
                             </div>
                         </div>
+                        <script>
+                            // Set minimum date for booking (today or tomorrow)
+                            const bookingToday = new Date();
+                            const yyyy = bookingToday.getFullYear();
+                            const mm = String(bookingToday.getMonth() + 1).padStart(2, '0');
+                            const dd = String(bookingToday.getDate()).padStart(2, '0');
+                            const minDate = `${yyyy}-${mm}-${dd}`;
+                            document.getElementById('date').setAttribute('min', minDate);
+                        </script>
 
                         <div class="form-group">
                             <label for="hotel_name">Hotel Name</label>
@@ -354,10 +360,11 @@
                             const people = document.getElementById('people').value.trim();
                             const date = document.getElementById('date').value.trim();
                             const packageType = document.getElementById('package').options[document.getElementById('package').selectedIndex].text;
+                            const time = document.getElementById('time').value.trim();
                             const hotel = document.getElementById('hotel_name').value.trim();
 
                             // Compose WhatsApp message
-                            const message = `Safari Booking Request:%0AName: ${name}%0APeople: ${people}%0ADate: ${date}%0APackage: ${packageType}%0AHotel: ${hotel}`;
+                            const message = `Safari Booking Request:%0AName: ${name}%0APeople: ${people}%0ADate: ${date}%0APackage: ${packageType}%0Atime: ${time}%0AHotel: ${hotel}`;
                             const whatsappNumber = '94717595859'; // without +
                             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 
@@ -375,7 +382,7 @@
     <section class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose YALA SAFARI Safaris</h2>
+                <h2>Why Choose YALA SAFARI </h2>
                 <p>We're committed to providing exceptional wildlife experiences with a focus on sustainability and
                     conservation</p>
             </div>
