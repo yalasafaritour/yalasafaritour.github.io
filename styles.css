@@ -11,6 +11,7 @@
             --light: #f5f5f5;
             --dark: #333;
             --gray: #777;
+            --dark_green : #3a493a;
         }
 
         body {
@@ -490,12 +491,12 @@
             margin-bottom: 20px;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(137, 136, 136, 0.1);
         }
 
         .faq-question {
             padding: 20px;
-            background: var(--primary);
+            background: var(--dark_green);
             color: white;
             font-weight: 600;
             cursor: pointer;
