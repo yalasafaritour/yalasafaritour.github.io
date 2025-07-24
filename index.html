@@ -14,7 +14,7 @@
     <meta name="robots" content="index, follow">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.yalasafari.lk">
+    <link rel="canonical" href="https://yalasafaritour.github.io/">
 
     <!-- Geo and Location Meta Tags -->
     <meta name="geo.region" content="LK">
@@ -24,11 +24,11 @@
 
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.yalasafari.lk">
+    <meta property="og:url" content="https://yalasafaritour.github.io/">
     <meta property="og:title" content="YALA SAFARI | Yala National Park Safari Tours & Booking">
     <meta property="og:description"
         content="Book unforgettable Yala National Park safari tours. See leopards, elephants & exotic birds with expert guides.">
-    <meta property="og:image" content="https://www.YALA SAFARI.lk/images/social-preview.jpg">
+    <meta property="og:image" content="https://yalasafaritour.github.io/images/social-preview.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="YALA SAFARI Safaris">
@@ -52,43 +52,42 @@
     <meta name="theme-color" content="#1a472a">
     <meta name="msapplication-TileColor" content="#1a472a">
 
-    <!-- Structured Data / Schema.org -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TouristAttraction",
-      "name": "Yala National Park Safari Tours",
-      "description": "Experience the wild beauty of Yala National Park with guided safari tours to see leopards, elephants, and exotic birds in their natural habitat.",
-      "url": "https://www.YALA SAFARI.lk",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Yala Junction",
-        "addressLocality": "Tissamaharama",
-        "addressRegion": "Southern Province",
-        "postalCode": "82600",
-        "addressCountry": "Sri Lanka"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "6.373333",
-        "longitude": "81.525278"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "05:30",
-        "closes": "18:30"
-      }
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Yala National Park Safari Tours",
+  "description": "Experience the wild beauty of Yala National Park with guided safari tours to see leopards, elephants, and exotic birds in their natural habitat.",
+  "url": "https://www.yalasafaritour.github.io",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Yala Junction",
+    "addressLocality": "Tissamaharama",
+    "addressRegion": "Southern Province",
+    "postalCode": "82600",
+    "addressCountry": "Sri Lanka"  // Fixed typo
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "6.373333",
+    "longitude": "81.525278"
+  },
+  "openingHoursSpecification": {  // Fixed spelling
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "05:30",
+    "closes": "18:30"
+  }
+}
+</script>
 
     <!-- Additional SEO Meta Tags -->
     <meta name="copyright" content="YALA SAFARI">
@@ -179,10 +178,28 @@
                 <div class="package-card">
                     <div class="package-img">
                         <img src="https://yalaleoparddiary.com/static/media/thumbnail.78783e1d.jpg"
-                            alt="Half Day Safari">
+                            alt="Morning Safari">
                     </div>
                     <div class="package-content">
                         <h3>Morning Safari</h3>
+                        <ul class="package-details">
+                            <li><i class="fas fa-clock"></i> Duration: 4 hours</li>
+                            <li><i class="fas fa-users"></i> Group Size: 1-6 people (for one jeep)</li>
+                            <li><i class="fas fa-camera"></i> Photography opportunities</li>
+                            <li><i class="fas fa-utensils"></i> Snacks & drinks included</li>
+                        </ul>
+                        <div class="package-price">$65 <span>per jeep</span></div>
+                        <a href="#booking" class="btn">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://www.mahoora.lk/images/2024/03/20/yala-safari.jpg"
+                            alt="Evening Safari">
+                    </div>
+                    <div class="package-content">
+                        <h3>Evening Safari</h3>
                         <ul class="package-details">
                             <li><i class="fas fa-clock"></i> Duration: 4 hours</li>
                             <li><i class="fas fa-users"></i> Group Size: 1-6 people (for one jeep)</li>
@@ -215,7 +232,7 @@
                 <div class="package-card">
                     <div class="package-img">
                         <img src="https://leopardtrails.com/leopardsofyala/wp-content/uploads/2020/11/@Ravindu-Dahanayaka-June-2024.jpg"
-                            alt="Premium Safari">
+                            alt="Half Day Safari">
                     </div>
                     <div class="package-content">
                         <h3>Half Day Safari</h3>
@@ -242,6 +259,7 @@
                     // Map package name to select value
                     let value = '';
                     if (packageName === 'Morning Safari') value = 'Morning Safari';
+                    else if (packageName === 'Evening Safari') value = 'Evening Safari';
                     else if (packageName === 'Full Day Safari') value = 'full-day';
                     else if (packageName === 'Half Day Safari') value = 'Half Day Safari';
                     // Set select value
@@ -323,15 +341,6 @@
                                 <label for="date">Preferred Date</label>
                                 <input type="date" name="date" id="date" required min="">
                             </div>
-                            <div class="form-group">
-                                <label for="time">Preferred Time</label>
-                                <select name="time" id="time" required>
-                                    <option value="">Select time</option>
-                                    <option value="morning">Morning</option>
-                                    <option value="Evening">Evening</option>
-                                    <option value="fullday">Full Day</option>
-                                </select>
-                            </div>
                         </div>
                         <script>
                             // Set minimum date for booking (today or tomorrow)
@@ -345,7 +354,7 @@
 
                         <div class="form-group">
                             <label for="hotel_name">Hotel Name</label>
-                            <input type="text" name="hotel_name" id="hotel_name" required>
+                            <input type="text" name="hotel_name" id="hotel_name" >
                         </div>
 
                         <div class="form-group">
@@ -362,11 +371,10 @@
                                 const people = document.getElementById('people').value.trim();
                                 const date = document.getElementById('date').value.trim();
                                 const packageType = document.getElementById('package').options[document.getElementById('package').selectedIndex].text;
-                                const time = document.getElementById('time').value.trim();
                                 const hotel = document.getElementById('hotel_name').value.trim();
 
                                 // Compose WhatsApp message
-                                const message = `Safari Booking Request:%0AName: ${name}%0APeople: ${people}%0ADate: ${date}%0APackage: ${packageType}%0Atime: ${time}%0AHotel: ${hotel}`;
+                                const message = `Safari Booking Request:%0AName: ${name}%0APeople: ${people}%0ADate: ${date}%0APackage: ${packageType}%0AHotel: ${hotel}`;
                                 const whatsappNumber = '94717595859'; // without +
                                 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 
