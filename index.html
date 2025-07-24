@@ -315,14 +315,22 @@
                                 <input type="number" name="people" id="people" min="1" max="100" required>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="jeep">Select Safari Jeep Type</label>
-                            <select name="jeep" id="jeep" required>
-                                <option value="">Choose a Jeep Type</option>
-                                <option value="Toyota Hilux">Toyota Hilux</option>
-                                <option value="Mahindra Bolero">Mahindra Bolero</option>
-                            </select>
+                        <div class="half-width">
+                            <div class="form-group">
+                              <label for="jeep">Select Safari Jeep Type</label>
+                                <select name="jeep" id="jeep" required>
+                                  <option value="">Choose a Jeep Type</option>
+                                  <option value="Toyota Hilux">Toyota Hilux</option>
+                                  <option value="Mahindra Bolero">Mahindra Bolero</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="jeepcount">Number of jeeps</label>
+                                <input type="number" name="jeepcount" id="jeepcount" min="1" max="100" required>
+                            </div>
                         </div>
+
 
                         <div class="form-group">
                             <label for="package">Select Safari Package</label>
@@ -369,12 +377,14 @@
                                 // Get form values
                                 const name = document.getElementById('name').value.trim();
                                 const people = document.getElementById('people').value.trim();
+                                const jeep = document.getElementById('jeep').value.trim();
+                                const jeepcount = document.getElementById('jeepcount').value.trim();
                                 const date = document.getElementById('date').value.trim();
                                 const packageType = document.getElementById('package').options[document.getElementById('package').selectedIndex].text;
                                 const hotel = document.getElementById('hotel_name').value.trim();
 
                                 // Compose WhatsApp message
-                                const message = `Safari Booking Request:%0AName: ${name}%0APeople: ${people}%0ADate: ${date}%0APackage: ${packageType}%0AHotel: ${hotel}`;
+                                const message = `Safari Booking Request:%0AName: ${name}%0APeople: ${people}%0ADate: ${date}%0APackage: ${packageType}%0Ajeep:${jeep}%0Ajeepcount:${jeepcount}%0AHotel: ${hotel}`;
                                 const whatsappNumber = '94717595859'; // without +
                                 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 
